@@ -25,6 +25,8 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
 
+    if(_id === friendId) return 
+  
     const response = await fetch(
       `${process.env.REACT_APP_SERVER_URL}/users/${_id}/${friendId}`,
       {
